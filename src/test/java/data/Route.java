@@ -1,0 +1,10 @@
+package data;
+
+public class Route {
+    public static final String DEMO_V2_URL = "https://apitest.myfatoorah.com/v2/";
+
+    public static final String DEMO_VENDOR_EMAIL = "hohifek482@trackden.com";
+    public static final String DEMO_VENDOR_PASSWORD = "A@qw1234";
+    public static final String DEMO_TOKEN = "SAKrB96iaBPWCII_-7vu_KYLdxjwavHr13VhGS0K2XkLyJbtrFmifd-_BhgFPLUpx7pB1noQ1Bzj_7hWcgOo-ExkubxL-qWWFln9aucg8PV0Z348Qhou4zxqY4HRzDNEAKYJeO_Rpay57POMcVT_Mu8NK6ng20ACnm8xDQNlkPO1fEtw1zHLlW0DloKkXBHN_1FRv6vHpxk-eSnPRkYzDoclUWTy6QQfooysQYZphvqy-7MebFVgfI_n1gCRY5B9bYvQgCbVyYxHRwHQYCbs6iYg3Xkdnu9eAJhtNR1bqkGH37-o515RiPUWeZ3ub_lUQbYMN_b-QJkL71KU4IAWTI1yiMqiqg6ZJr_p-KRE-n7m5EKiH0FE1pJQTlS6sM5prrTjeap08m-aQyCdA2aLJGrOrImoUzYbPUOk72ceOjsG6xJ-qfdaiKhLzL42svBQTHY-YYTSldBtg8ivOmp-wYfvgvDXzd1S6esDEAe-f8euzamPK0P3vy8a3RRb37JAyxy7EvcdTNx9l0Yyj1R66LzQPmbzrcy_ncRxn0qyBUNO57gyo6ChKHroJXzkPiUgKqZW9NJJ_ZuxqgeTV2-OGKb5Pt1OG5F-3pWK1mLZPLd5Gn19uoMhOPXSUvZlDHRSn415zpzB65tQN02b1fKolFSlGXNvOCp1OkpElripQ9TRRbox";
+
+}

@@ -1,2 +1,4 @@
-package models;public class Auth {
+package models;
+public class Auth {
+
 }
