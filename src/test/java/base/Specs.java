@@ -3,6 +3,7 @@ package base;
 import data.Route;
 import io.restassured.http.*;
 import io.restassured.specification.RequestSpecification;
+import testcases.auth.TokenTest;
 
 import static io.restassured.RestAssured.*;
 
@@ -12,6 +13,6 @@ public class Specs {
                 baseUri(Route.DEMO_V2_URL)
                 .contentType(ContentType.JSON).
                 log().all()
-                .auth().oauth2(Route.DEMO_TOKEN);
+                .auth().oauth2(Route.token);
     }
 }

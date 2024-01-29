@@ -13,7 +13,9 @@ import static org.hamcrest.Matchers.*;
 
 public class TokenTest {
 
-//    @Test
+    public static String Token;
+
+    //    @Test
 //    public void userIsAutherized() {
 //
 //        Auth auth=new Auth();
@@ -39,7 +41,6 @@ public class TokenTest {
     @Test
     public void shouldCreateToken(){
         Response response = TokenApi.getToken();
-
         String Token = response.body().path("access_token");
 
         assertThat(response.statusCode(), equalTo(200));
