@@ -8,6 +8,7 @@ import testcases.auth.TokenTest;
 import static io.restassured.RestAssured.given;
 
 public class GetCurrenciesExchangeList {
+    //test
     public static Response getCurrencies(){
         return             given()
                 .baseUri(Route.DEMO_V2_URL)
