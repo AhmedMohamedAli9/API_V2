@@ -1,13 +1,10 @@
-package apis.auth;
+package com.myfatoorah.api.apis.auth;
 
-import base.Specs;
-import data.Route;
+import com.myfatoorah.api.data.Route;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.urlEncodingEnabled;
 
 public class TokenApi {
     public static Response getToken(){

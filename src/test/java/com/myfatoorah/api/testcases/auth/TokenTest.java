@@ -1,13 +1,9 @@
-package testcases.auth;
+package com.myfatoorah.api.testcases.auth;
 
-import apis.auth.TokenApi;
-import io.restassured.http.ContentType;
+import com.myfatoorah.api.apis.auth.TokenApi;
 import io.restassured.response.Response;
-import models.Auth;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 

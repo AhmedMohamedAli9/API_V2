@@ -1,6 +1,6 @@
-package steps;
+package com.myfatoorah.api.steps;
 
-import apis.auth.TokenApi;
+import com.myfatoorah.api.apis.auth.TokenApi;
 import io.restassured.response.Response;
 
 public class CreateToken {

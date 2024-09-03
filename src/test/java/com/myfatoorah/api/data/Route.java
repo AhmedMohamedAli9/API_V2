@@ -1,6 +1,6 @@
-package data;
+package com.myfatoorah.api.data;
 
-import steps.CreateToken;
+import com.myfatoorah.api.steps.CreateToken;
 
 public class Route {
     public static final String DEMO_V2_URL = "https://apitest.myfatoorah.com/v2/";

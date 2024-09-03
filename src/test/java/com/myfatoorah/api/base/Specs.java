@@ -1,9 +1,8 @@
-package base;
+package com.myfatoorah.api.base;
 
-import data.Route;
+import com.myfatoorah.api.data.Route;
 import io.restassured.http.*;
 import io.restassured.specification.RequestSpecification;
-import testcases.auth.TokenTest;
 
 import static io.restassured.RestAssured.*;
 

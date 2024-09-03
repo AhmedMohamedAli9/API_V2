@@ -1,7 +1,7 @@
-package testcases.list;
-import apis.list.ListAPIs;
+package com.myfatoorah.api.testcases.list;
+import com.myfatoorah.api.apis.list.ListAPIs;
 import io.restassured.response.Response;
-import models.Auth;
+import com.myfatoorah.api.models.Auth;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.MatcherAssert.assertThat;
