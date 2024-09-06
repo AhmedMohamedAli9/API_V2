@@ -2,6 +2,7 @@ package com.myfatoorah.api.testcases.list;
 import com.myfatoorah.api.apis.list.ListAPIs;
 import io.restassured.response.Response;
 import com.myfatoorah.api.models.Auth;
+import java.util.*;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -13,5 +14,6 @@ public class GetBankListTest extends Auth {
         Response response = ListAPIs.getBanks();
 
         assertThat(response.statusCode(), equalTo(200));
+        assertThat(response."Value", not(equalTo("")));
     }
 }

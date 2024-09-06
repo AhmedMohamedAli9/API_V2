@@ -8,7 +8,7 @@ import com.myfatoorah.api.testcases.auth.TokenTest;
 import static io.restassured.RestAssured.given;
 public class ListAPIs {
     public static Response getBanks(){
-        return given().spec(Specs.getRequestSpec())
+        return  given().spec(Specs.getRequestSpec())
                 .when()
                 .get("GetBanks")
                 .then()
@@ -16,7 +16,7 @@ public class ListAPIs {
                 .extract().response();
     }
     public static Response getCurrencies(){
-        return             given()
+        return  given()
                 .baseUri(Route.DEMO_V2_URL)
                 .contentType(ContentType.JSON)
                 .log().all()
