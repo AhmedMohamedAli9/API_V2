@@ -4,6 +4,7 @@ import com.myfatoorah.api.apis.list.ListAPIs;
 import io.restassured.response.Response;
 import com.myfatoorah.api.models.Auth;
 
+
 import java.util.*;
 
 import org.testng.annotations.Test;
@@ -12,7 +13,7 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-public class GetBankListTest extends Auth {
+public class GetBankListTest {
 
     @Test
     public void shouldReturnBanks() {
@@ -31,4 +32,32 @@ public class GetBankListTest extends Auth {
             assertThat(item.get("Text").toString(), not(equalTo(null)));
         }
     }
+
+    @Test
+    public void shouldReturnBanksInAcceptableTime() {
+        Response response = ListAPIs.getBanks();
+        assertThat(response.time(), lessThan(2000L)); // Ensure response time is less than 2000 milliseconds
+    }
+
+    @Test
+    public void shouldReturnExpectedNumberOfBanks() {
+        Response response = ListAPIs.getBanks();
+        List<Map<String, Object>> responseList = response.getBody().jsonPath().getList("");
+        assertThat(responseList.size(), greaterThan(0)); // Ensure there's at least one bank
+    }
+
+    @Test
+    public void shouldHaveUniqueValues() {
+        Response response = ListAPIs.getBanks();
+        List<Map<String, Object>> responseList = response.getBody().jsonPath().getList("");
+
+        Set<Object> uniqueValues = new HashSet<>();
+        for (Map<String, Object> item : responseList) {
+            uniqueValues.add(item.get("Value"));
+        }
+
+        assertThat(uniqueValues.size(), equalTo(responseList.size())); // Ensure all values are unique
+    }
+
+
 }

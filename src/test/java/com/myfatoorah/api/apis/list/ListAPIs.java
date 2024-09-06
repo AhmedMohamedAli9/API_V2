@@ -15,12 +15,8 @@ public class ListAPIs {
                 .log().all()
                 .extract().response();
     }
-    public static Response getCurrencies(){
-        return  given()
-                .baseUri(Route.DEMO_V2_URL)
-                .contentType(ContentType.JSON)
-                .log().all()
-                .auth().oauth2(TokenTest.Token)
+    public static Response getCurrencyList(){
+        return  given().spec(Specs.getRequestSpec())
                 .when()
                 .get("GetCurrenciesExchangeList")
                 .then()
