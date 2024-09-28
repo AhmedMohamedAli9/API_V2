@@ -1,17 +1,18 @@
 package com.myfatoorah.api.apis.payment;
 
 import com.myfatoorah.api.base.Specs;
+import com.myfatoorah.api.models.payment.ExecutePayment;
 import com.myfatoorah.api.models.payment.InitiatePayment;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 
-public class InitiatePaymentApi {
-    public static Response InitiatePaymentAPIs(InitiatePayment initiatePayment){
+public class ExecutePaymentApi {
+    public static Response ExecutePaymentAPIs(ExecutePayment executePayment){
         return  given().spec(Specs.getRequestSpec())
-                .body(initiatePayment)
+                .body(executePayment)
                 .when()
-                .post("InitiatePayment")
+                .post("ExecutePayment")
                 .then()
                 .log().all()
                 .extract().response();

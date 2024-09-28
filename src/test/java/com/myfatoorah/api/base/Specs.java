@@ -7,7 +7,7 @@ import io.restassured.specification.RequestSpecification;
 import static io.restassured.RestAssured.*;
 
 public class Specs {
-    public static String getEnvironment(){
+    public static String getEnvironment() {
         String env = System.getProperty("env", "DEMO");
         String baseUrl = switch (env) {
             case "DEMO" -> "https://apitest.myfatoorah.com/v2/";
@@ -19,11 +19,12 @@ public class Specs {
         };
         return baseUrl;
     }
-    public static RequestSpecification getRequestSpec(){
-        return given().
-                baseUri(Specs.getEnvironment())
-                .contentType(ContentType.JSON).
-                log().all()
+
+    public static RequestSpecification getRequestSpec() {
+        return given()
+                .baseUri(Specs.getEnvironment())
+                .contentType(ContentType.JSON)
+                .log().all()
                 .auth().oauth2(Route.token);
     }
 }
