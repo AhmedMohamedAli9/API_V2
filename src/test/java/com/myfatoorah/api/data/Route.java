@@ -8,4 +8,10 @@ public class Route {
     public static final String DEMO_VENDOR_PASSWORD = "A@qw1234";
 
     public static String token = CreateToken.createToken();
+    //I created this enum to use it later in the language parameter in ExecutePayment and SendPayment, - Not yet used-
+    public enum Language{
+        AR,
+        EN
+    }
+
 }
