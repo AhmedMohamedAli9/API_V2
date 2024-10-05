@@ -1,7 +1,11 @@
 package com.myfatoorah.api.models.payment;
-import java.util.*;
-import com.myfatoorah.api.models.payment.ExecutePaymentHelper.*;
 
+import java.util.*;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.myfatoorah.api.models.payment.paymentModels.*;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ExecutePayment {
     /**
      * In this section we are adding all the parameters/objects that we need in
@@ -25,7 +29,8 @@ public class ExecutePayment {
     private CustomerAddress CustomerAddress;
     private String ExpiryDate;
     private List<InvoiceItem> InvoiceItems;
-    private int ShippingMethod;
+    @JsonInclude(JsonInclude.Include.NON_DEFAULT)
+    private String ShippingMethod;
     private ShippingConsignee ShippingConsignee;
     private List<Supplier> Suppliers;
     private ProcessingDetails ProcessingDetails;
@@ -49,11 +54,11 @@ public class ExecutePayment {
         SessionId = sessionId;
     }
 
-    public com.myfatoorah.api.models.payment.ExecutePaymentHelper.RecurringModel getRecurringModel() {
+    public com.myfatoorah.api.models.payment.paymentModels.RecurringModel getRecurringModel() {
         return RecurringModel;
     }
 
-    public void setRecurringModel(com.myfatoorah.api.models.payment.ExecutePaymentHelper.RecurringModel recurringModel) {
+    public void setRecurringModel(com.myfatoorah.api.models.payment.paymentModels.RecurringModel recurringModel) {
         RecurringModel = recurringModel;
     }
 
@@ -67,6 +72,14 @@ public class ExecutePayment {
 
     public String getDisplayCurrencyIso() {
         return DisplayCurrencyIso;
+    }
+
+    public String getShippingMethod() {
+        return ShippingMethod;
+    }
+
+    public void setShippingMethod(String shippingMethod) {
+        ShippingMethod = shippingMethod;
     }
 
     public void setDisplayCurrencyIso(String displayCurrencyIso) {
@@ -153,11 +166,11 @@ public class ExecutePayment {
         ErrorUrl = errorUrl;
     }
 
-    public com.myfatoorah.api.models.payment.ExecutePaymentHelper.CustomerAddress getCustomerAddress() {
+    public com.myfatoorah.api.models.payment.paymentModels.CustomerAddress getCustomerAddress() {
         return CustomerAddress;
     }
 
-    public void setCustomerAddress(com.myfatoorah.api.models.payment.ExecutePaymentHelper.CustomerAddress customerAddress) {
+    public void setCustomerAddress(com.myfatoorah.api.models.payment.paymentModels.CustomerAddress customerAddress) {
         CustomerAddress = customerAddress;
     }
 
@@ -177,19 +190,12 @@ public class ExecutePayment {
         InvoiceItems = invoiceItems;
     }
 
-    public int getShippingMethod() {
-        return ShippingMethod;
-    }
 
-    public void setShippingMethod(int shippingMethod) {
-        ShippingMethod = shippingMethod;
-    }
-
-    public com.myfatoorah.api.models.payment.ExecutePaymentHelper.ShippingConsignee getShippingConsignee() {
+    public com.myfatoorah.api.models.payment.paymentModels.ShippingConsignee getShippingConsignee() {
         return ShippingConsignee;
     }
 
-    public void setShippingConsignee(com.myfatoorah.api.models.payment.ExecutePaymentHelper.ShippingConsignee shippingConsignee) {
+    public void setShippingConsignee(com.myfatoorah.api.models.payment.paymentModels.ShippingConsignee shippingConsignee) {
         ShippingConsignee = shippingConsignee;
     }
 
@@ -201,13 +207,14 @@ public class ExecutePayment {
         Suppliers = suppliers;
     }
 
-    public com.myfatoorah.api.models.payment.ExecutePaymentHelper.ProcessingDetails getProcessingDetails() {
+    public com.myfatoorah.api.models.payment.paymentModels.ProcessingDetails getProcessingDetails() {
         return ProcessingDetails;
     }
 
-    public void setProcessingDetails(com.myfatoorah.api.models.payment.ExecutePaymentHelper.ProcessingDetails processingDetails) {
+    public void setProcessingDetails(com.myfatoorah.api.models.payment.paymentModels.ProcessingDetails processingDetails) {
         ProcessingDetails = processingDetails;
     }
+
     /**
      * Here we will add constructors based on our choices for testing the ExecutePayment based on the flow that we will need to do.
      * There will probably be a lot of constructors here
@@ -215,5 +222,30 @@ public class ExecutePayment {
     public ExecutePayment(int paymentMethodId, double invoiceValue) {
         PaymentMethodId = paymentMethodId;
         InvoiceValue = invoiceValue;
+    }
+
+
+    public ExecutePayment(int paymentMethodId, double invoiceValue, com.myfatoorah.api.models.payment.paymentModels.RecurringModel recurringModel) {
+        PaymentMethodId = paymentMethodId;
+        InvoiceValue = invoiceValue;
+        RecurringModel = recurringModel;
+    }
+
+    public ExecutePayment(int paymentMethodId, String customerName, String displayCurrencyIso, String mobileCountryCode, String customerMobile, String customerEmail, double invoiceValue, String language, String customerReference, String customerCivilId, String userDefinedField, String callBackUrl, String errorUrl, com.myfatoorah.api.models.payment.paymentModels.CustomerAddress customerAddress, String expiryDate) {
+        PaymentMethodId = paymentMethodId;
+        CustomerName = customerName;
+        DisplayCurrencyIso = displayCurrencyIso;
+        MobileCountryCode = mobileCountryCode;
+        CustomerMobile = customerMobile;
+        CustomerEmail = customerEmail;
+        InvoiceValue = invoiceValue;
+        Language = language;
+        CustomerReference = customerReference;
+        CustomerCivilId = customerCivilId;
+        UserDefinedField = userDefinedField;
+        CallBackUrl = callBackUrl;
+        ErrorUrl = errorUrl;
+        CustomerAddress = customerAddress;
+        ExpiryDate = expiryDate;
     }
 }
